@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
+
+
+    <div class="container">
+    <div>
+        <img src="img/Gavel_0001.png" width="100%">
+    </div>
+    <div>
+    <div id="login-div">
+        <form>
+            <h2>Log in</h2>
+            <div class="mb-3">
+              <label for="register-email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="register-email" aria-describedby="emailHelp">
+              <div id="email-login-error" class="form-text">Your email needs to be a @stud.noroff.no email</div>
+            </div>
+            <div class="mb-3">
+              <label for="login-password" class="form-label">Password</label>
+              <input type="password" class="form-control" id="login-password">
+              <div id="password-login-error" class="form-text ">Your password does not match our database</div>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+             <p>Don't have an account? </br>
+                <span><a href="#">Register here!</a></span></p>
+        </div>
+          
+    <div id="register-div">
+        <form>
+            <h2>Register</h2>
+            <div class="mb-3">
+              <label for="register-email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="register-email" aria-describedby="emailHelp">
+              <div id="email-register-error" class="form-text">Your email needs to be a @stud.noroff.no email</div>
+            </div>
+            <div class="mb-3">
+                <label for="register-avatar" class="form-label">Avatar URL</label>
+                <input type="text" class="form-control" id="register-avatar" aria-describedby="emailHelp">
+                <div id="avatar-register-error" class="form-text">Avatar URL needs to be a url toa photo</div>
+              </div>
+            <div class="mb-3">
+              <label for="register-password-1" class="form-label">Password</label>
+              <input type="password" class="form-control" id="register-password-1">
+              <div id="password-error" class="form-text">Your passwords does not match</div>
+            </div>
+            <div class="mb-3">
+                <label for="register-password-2" class="form-label">Password</label>
+                <input type="password" class="form-control" id="register-password-2">
+                <div id="password-error" class="form-text">Your passwords does not match</div>
+              </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        <p>Allready have an account? </br>
+        <span><a href="#">Log in here!</a></span></p>
+    </div>
+    </div>
+    </div>
+    <footer>
+
+    </footer>
+</body>
+</html>

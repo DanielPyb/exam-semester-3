@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js" defer></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-md">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="login.html">Log in</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Edit Avatar
+                  </a>
+                  <ul class="dropdown-menu" style="min-width: 375px;">
+                    <li><a class="dropdown-item" href="#"><img src="img/Gavel_0001.png" style="width:100%"></a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li>
+                        <div class="mb-3">
+                            <label for="listing-photo" class="form-label">Photo URL</label>
+                            <input type="url" class="form-control" id="listing-photo">
+                            <div id="url-update-error" class="form-text" style="display: none;">This needs to be a valid URL to a photo</div>
+                          </div>
+                    </li>
+                    <li>
+                        <div class="container text-center">
+                            <div class="row">
+                            <div class="col">
+                                <button class="btn btn-success">Confirm</button>
+                            </div>
+                            <div class="col">
+                                <button class="btn btn-outline-danger">Cancel</button>
+                            </div>
+                        </div>
+                        </div>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+              <form class="d-flex">
+                <button class="btn btn-danger" type="submit" id="log-out-btn">Log out</button>
+                <button class="btn btn-primary" type="submit" id="log-in-btn" style="display: none;">Log in</button>
+              </form>
+            </div>
+          </div>
+    </nav>
+
+    <div class="container py-4">
+        <div class="row">
+            <div class="col">
+            <input class="form-control me-2" type="search" placeholder="Search listings" aria-label="Search">
+            </div>
+            <div class="col">
+                <button class="btn-primary btn" id="new-listing-btn" style="width: 100%">Create new listing</button>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="newlisting-container">
+        <form>
+            <h2>New listing</h2>
+            <div class="row">
+            <div class="mb-3 col">
+              <label for="title-listing" class="form-label">Title</label>
+              <input type="text" class="form-control" id="title-listing" aria-describedby="title for new listing">
+              <div id="email-register-error" class="form-text">Your listing needs a title</div>
+            </div>
+            <div class="mb-3 col">
+                <label for="title-date" class="form-label">Deadline</label>
+                <input type="date" class="form-control" id="register-avatar" aria-describedby="deadline">
+                <div id="avatar-register-error" class="form-text">We need an end-date for the item</div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="listing-description" class="form-label">Description</label>
+              <textarea class="form-control" id="listing-description" rows="8"></textarea>
+              <div id="description-error" class="form-text">Your passwords does not match</div>
+            </div>
+            <div class="mb-3">
+                <label for="listing-photo" class="form-label">Phot URL</label>
+                <input type="url" class="form-control" id="listing-photo">
+                <div id="url-error" class="form-text">This needs to be a valid URL to a photo</div>
+              </div>
+            <button type="submit" class="btn btn-primary">Create a new listing</button>
+          </form>
+    </div>
+
+    <div class="container">
+        <div class="card-group my-5">
+            <div class="card">
+            <h2 class="card-title m-3">Title</h2>
+              <img src="img/Gavel_0001.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="card-footer">
+                <div class="container text-center">
+                    <div class="row">
+                      <div class="col">
+                        <p>time left</p>
+                            <h4>18.22-22</h4>
+                            <p>Seller: </br><span>Seller-ID</span></p>
+                      </div>
+                      <div class="col">
+                        <p>Current bid</p>
+                            <h4>18.22-22</h4>
+                            <p>By: </br><span>Bidder-ID</span></p>
+                      </div>
+                      <div class="col" style="width: 100%;">
+                        <p>Your bid</p>
+                        <form>
+                            <input type="number"> </br>
+                            <button type="submit" class="btn btn-primary mt-3">bid</button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-md">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination pagination-lg justify-content-center"">
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Previous">
+                      <span aria-hidden="true">&laquo;</span>
+                    </a>
+                  </li>
+              <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+    </div>
+
+    <!-- modal for when that time comes
+<div class="modal fade" id="new-listing-modal" tabindex="-1" aria-labelledby="new-listing-modal-content" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title fs-5" id="new-listing-modal-contentl">New listing</h2">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+                <form>
+            <div class="row">
+            <div class="mb-3 col">
+              <label for="title-listing" class="form-label">Title</label>
+              <input type="text" class="form-control" id="title-listing" aria-describedby="title for new listing">
+              <div id="email-register-error" class="form-text">Your listing needs a title</div>
+            </div>
+            <div class="mb-3 col">
+                <label for="title-date" class="form-label">Deadline</label>
+                <input type="date" class="form-control" id="register-avatar" aria-describedby="deadline">
+                <div id="avatar-register-error" class="form-text">We need an end-date for the item</div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="listing-description" class="form-label">Description</label>
+              <textarea class="form-control" id="listing-description" rows="8"></textarea>
+              <div id="description-error" class="form-text">Your passwords does not match</div>
+            </div>
+            <div class="mb-3">
+                <label for="listing-photo" class="form-label">Phot URL</label>
+                <input type="url" class="form-control" id="listing-photo">
+                <div id="url-error" class="form-text">This needs to be a valid URL to a photo</div>
+              </div>
+            <button type="submit" class="btn btn-primary">Create a new listing</button>
+          </form>
+      </div>
+    </div>
+  </div>
+</div> -->
+</body>
+</html>
