@@ -1,60 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js" defer></script>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-md">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                      <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="login.html">Log in</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Edit Avatar
+                      </a>
+                      <ul class="dropdown-menu" style="min-width: 375px;">
+                        <li><a class="dropdown-item" href="#"><img src="img/Gavel_0001.png" style="width:100%"></a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li>
+                            <div class="mb-3">
+                                <label for="listing-photo" class="form-label">Photo URL</label>
+                                <input type="url" class="form-control" id="listing-photo">
+                                <div id="url-update-error" class="form-text" style="display: none;">This needs to be a valid URL to a photo</div>
+                              </div>
+                        </li>
+                        <li>
+                            <div class="container text-center">
+                                <div class="row">
+                                <div class="col">
+                                    <button class="btn btn-success">Confirm</button>
+                                </div>
+                                <div class="col">
+                                    <button class="btn btn-outline-danger">Cancel</button>
+                                </div>
+                            </div>
+                            </div>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                  <form class="d-flex">
+                    <button class="btn btn-danger" type="submit" id="log-out-btn">Log out</button>
+                    <button class="btn btn-primary" type="submit" id="log-in-btn" style="display: none;">Log in</button>
+                  </form>
+                </div>
+              </div>
+        </nav>
+    
     <div class="container">
-        <h2>Title</h2>
-        <div>
-            <img src="img/Gavel_0001.png" width="100%">
-            <p>Item description: soda purchased from 
-                Telemark. Only available during the...</p>
+        <div class="card-group my-5">
+            <div class="card">
+            <h2 class="card-title m-3">Title</h2>
+              <img src="img/Gavel_0001.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="card-footer">
+                <div class="container text-center">
+                    <div class="row">
+                        <div class="col">
+                            <img src="img/Gavel_0001.png" style="width: 100%;">
+                          </div>
+                      <div class="col img-large">
+                        <p>time left</p>
+                            <h4>18.22-22</h4>
+                            <p>Seller: </br><span>Seller-ID</span></p>
+                      </div>
+                      <div class="col img-large">
+                        <img src="img/Gavel_0001.png" style="width: 100%;">
+                      </div>
+                      <div class="col">
+                            <p>Current bid</p>
+                            <h4>18.22-22</h4>
+                            <p>By: </br><span>Bidder-ID</span></p>
+                      </div>
+                      <div class="col img-large">
+                        <img src="img/Gavel_0001.png" style="width: 100%;">
+                      </div>
+                      <div class="col" style="width: 100%;">
+                        <p>Your bid</p>
+                        <form>
+                            <input type="number"> </br>
+                            <button type="submit" class="btn btn-primary mt-3">bid</button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+            </div>
         </div>
-        <div>
-            <div>
-                <p>time left</p>
-                <h4>18.22-22</h4>
-                <p>Seller: <span>Seller-ID</span></p>
-            </div>
-            <div>
-                <p>Current bid</p>
-                <h4>18.22-22</h4>
-                <p>By: <span>Bidder-ID</span></p>
-            </div>
-            <div>
-                <p>your bid</p>
-                <form>
-                    <input type="number"> </br>
-                    <button type="submit" class="btn btn-primary">bid</button>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <div class="container-md">
-        <nav aria-label="Page navigation example">
-            <ul class="pagination pagination-lg justify-content-center"">
-                <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Previous">
-                      <span aria-hidden="true">&laquo;</span>
-                    </a>
-                  </li>
-              <li class="page-item"><a class="page-link" href="#">1</a></li>
-              <li class="page-item"><a class="page-link" href="#">2</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
-              <li class="page-item">
-                <a class="page-link" href="#" aria-label="Next">
-                  <span aria-hidden="true">&raquo;</span>
-                </a>
-              </li>
-            </ul>
-          </nav>
     </div>
 </body>
 </html>
