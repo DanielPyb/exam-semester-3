@@ -7,6 +7,11 @@
     <title>Document</title>
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js" defer></script>
+    <script src="scripts/functions/logoutfunction.mjs" type="module" defer></script>
+    <script src="scripts/renders/login.mjs" type="module" defer></script>
+    <script src="scripts/renders/register.mjs" type="module" defer></script>
+    
+    
 </head>
 <body>
     <nav class="navbar navbar-expand-md">
@@ -69,8 +74,8 @@
         <form>
             <h2>Log in</h2>
             <div class="mb-3">
-              <label for="register-email" class="form-label">Email</label>
-              <input type="email" class="form-control" id="register-email" aria-describedby="emailHelp">
+              <label for="login-email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="login-email" aria-describedby="emailHelp">
               <div id="email-login-error" class="form-text">Your email needs to be a @stud.noroff.no email</div>
             </div>
             <div class="mb-3">
@@ -78,7 +83,7 @@
               <input type="password" class="form-control" id="login-password">
               <div id="password-login-error" class="form-text ">Your password does not match our database</div>
             </div>
-            <button type="submit" class="btn btn-primary">Log in</button>
+            <button type="submit" class="btn btn-primary" id="login-btn">Log in</button>
           </form>
              <p>Don't have an account? </br>
                 <span><a href="#">Register here!</a></span></p>
@@ -91,6 +96,11 @@
               <label for="register-email" class="form-label">Email</label>
               <input type="email" class="form-control" id="register-email" aria-describedby="emailHelp">
               <div id="email-register-error" class="form-text">Your email needs to be a @stud.noroff.no email</div>
+            </div>
+            <div class="mb-3">
+              <label for="register-username" class="form-label">Username</label>
+              <input type="text" class="form-control" id="register-username" aria-describedby="emailHelp">
+              <div id="username-register-error" class="form-text">Username needs to be better</div>
             </div>
             <div class="mb-3">
                 <label for="register-avatar" class="form-label">Avatar URL</label>
@@ -107,7 +117,7 @@
                 <input type="password" class="form-control" id="register-password-2">
                 <div id="password-error" class="form-text">Your passwords does not match</div>
               </div>
-            <button type="submit" class="btn btn-primary">Register</button>
+            <button type="submit" class="btn btn-primary" id="register-btn">Register</button>
           </form>
         <p>Allready have an account? </br>
         <span><a href="#">Log in here!</a></span></p>
