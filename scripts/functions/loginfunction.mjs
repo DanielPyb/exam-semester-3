@@ -1,3 +1,5 @@
+import { baseURL } from "../API/links.mjs";
+
 const loginForm = document.getElementById("login-div");
 const email = document.getElementById("login-email");
 const password = document.getElementById("login-password");
@@ -17,7 +19,7 @@ export async function loginFunc() {
       body: JSON.stringify(loginObject),
     };
     try {
-      const response = await fetch(`${baseURL}auction/auth/login`, options);
+      const response = await fetch(`${baseURL}/auction/auth/login`, options);
       const result = await response.json();
       console.log(result)
       localStorage.setItem("accessToken", result.accessToken);
@@ -28,6 +30,6 @@ export async function loginFunc() {
         alert(result.message);
       }
     } catch (error) {
-        alert("something went wrong");
+        alert(error);
     }
   }
