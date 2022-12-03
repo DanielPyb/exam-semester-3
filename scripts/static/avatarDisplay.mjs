@@ -5,10 +5,8 @@ import { isLoggedIn } from "./loginCheck.mjs";
 export async function avatarDisplay(){
     const avatarContainer = document.getElementById("avatar-photo-container");
     if(isLoggedIn()){
-        console.log("hey again")
-        const username = localStorage.getItem("username")
-        const avatarInfo = await getProfile(username)
-        console.log(avatarInfo);
+        const username = localStorage.getItem("username");
+        const avatarInfo = await getProfile(username);
         avatarContainer.innerHTML = `<img src="${avatarInfo.avatar}" style="width:100%">`
     }else{
     avatarContainer.innerHTML = `<img src="img/Gavel_0001.png" style="width:100%">`
