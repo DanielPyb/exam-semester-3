@@ -1,4 +1,4 @@
-import { createListing } from "../functions/createlistingfunction.mjs";
+import { createListing } from "../../API/listings/createlistingfunction.mjs";
 
 const listingBTN = document.getElementById("listing-btn");
 

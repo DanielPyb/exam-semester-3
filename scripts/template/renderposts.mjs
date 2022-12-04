@@ -1,25 +1,7 @@
-const postsURL = "https://api.noroff.dev/api/v1/auction/listings?sort=created&sortOrder=desc"
-const listingsContainer = document.getElementById("active-listings");
-
-export async function getAll(){
-    const options = {
-      method: "GET",
-      headers: {
-          Authorization: `Bearer ${localStorage.getItem("accessToken")}`
-      }
-  }
-  try{
-    const response = await fetch(postsURL, options)
-    const data = await response.json();
-    return data;
-    }catch(error){
-      console.log(error)
-    }
-}
-function getListings(arr, container) {
+export function getListings(arr, container) {
     container.innerHTML= "";
     arr.forEach(post => {
-        const {media: media, title : title, description: description, id: id, endsAt: endsAt, _count: bid} = post;
+        const {media: media, title : title, description: description, id: id, endsAt: endsAt, bids: bids, seller: seller} = post;
         container.innerHTML += 
         `
         <div class="col-md-6 py-3">
@@ -35,11 +17,11 @@ function getListings(arr, container) {
                     <div class="col">
                             <p>time left</p>
                             <h4>${endsAt}</h4>
-                            <p>Seller: </br><span>Seller-ID</span></p>
+                            <p>Seller: </br><span>${seller.name}</span></p>
                     </div>
                     <div class="col">
                         <p>Current bid</p>
-                            <h4>${bid.bids}</h4>
+                            <h4>curent bid</h4>
                             <p>By: </br><span>Bidder-ID</span></p>
                     </div>
                     <div class="col" style="width: 100%;">
@@ -59,6 +41,3 @@ function getListings(arr, container) {
     });
 }
 
-const postArray = await getAll();
-
-getListings(postArray, listingsContainer);

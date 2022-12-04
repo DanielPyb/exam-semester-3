@@ -1,5 +1,5 @@
-import { getProfile } from "./getProfile.mjs"
-import { isLoggedIn } from "./loginCheck.mjs"
+import { getProfile } from "../API/profile/getProfile.mjs";
+import { isLoggedIn } from "../Validation/loginCheck.mjs";
 
 export async function creditDisplay(){
     const credit = document.getElementById("credit-btn")

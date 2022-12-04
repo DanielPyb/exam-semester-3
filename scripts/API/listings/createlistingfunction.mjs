@@ -1,4 +1,4 @@
-import { baseURL } from "../API/links.mjs";
+import { baseURL } from "../links.mjs";
 
 export async function createListing() {
     const title = document.getElementById("title-listing");

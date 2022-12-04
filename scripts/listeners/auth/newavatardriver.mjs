@@ -1,5 +1,4 @@
-import { updateAvatar } from "../functions/newavatar.mjs";
-
+import { updateAvatar } from "../../API/auth/newavatar.mjs";
 
 const newAvatrBTN = document.getElementById("confirm-avatar");
 

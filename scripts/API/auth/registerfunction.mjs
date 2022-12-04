@@ -1,10 +1,10 @@
-import { baseURL } from "../API/links.mjs";
+import { baseURL } from "../links.mjs";
 import {
   validateEmail,
   validatePassword,
   validateURL,
   validateUsername,
-} from "../API/validate.mjs";
+} from "../../Validation/validate.mjs";
 
 export async function registerFunc() {
   const registerUsername = document.getElementById("register-username");

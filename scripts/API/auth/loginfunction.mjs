@@ -1,4 +1,4 @@
-import { baseURL } from "../API/links.mjs";
+import { baseURL } from "../links.mjs";
 
 const loginForm = document.getElementById("login-div");
 const email = document.getElementById("login-email");

@@ -1,4 +1,5 @@
-import { baseURL } from "../API/links.mjs";
+import { baseURL } from "../links.mjs";
+
 
 export async function singleProduct(id) {
   const options = {
@@ -8,7 +9,7 @@ export async function singleProduct(id) {
     },
   };
   try {
-    const response = await fetch(`${baseURL}/auction/listings/${id}?_seller=true&?_bids=true`, options);
+    const response = await fetch(`${baseURL}/auction/listings/${id}?_seller=true&_bids=true`, options);
     const data = await response.json();
     return(data);
   } catch (error) {

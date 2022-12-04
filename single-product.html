@@ -10,7 +10,8 @@
         <title>Document</title>
         <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
         <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js" defer></script>
-        <script src="/scripts/renders/individual-product.mjs" type="module" defer></script> 
+        <script src="/scripts/listeners/listings/bidListener.mjs" type="module" defer></script>
+        <script src="/scripts/listeners/listings/individual-product.mjs" type="module" defer></script> 
     </head>
     <body>
         <nav class="navbar navbar-expand-md">
@@ -96,8 +97,8 @@
                       <div class="col" style="width: 100%;">
                         <p>Your bid</p>
                         <form>
-                            <input type="number"> </br>
-                            <button type="submit" class="btn btn-primary mt-3">bid</button>
+                            <input type="number" id="bid-amount"> </br>
+                            <button type="submit" class="btn btn-primary mt-3" id="bidding-btn">bid</button>
                         </form>
                       </div>
                     </div>
@@ -106,6 +107,13 @@
             </div>
             </div>
         </div>
+    </div>
+    <div class="col" style="width: 100%;">
+      <p>Your bid</p>
+      <form>
+          <input type="number" id="bid-amount2"> </br>
+          <button type="submit" class="btn btn-primary mt-3" id="bidding-btn2">bid</button>
+      </form>
     </div>
 </body>
 </html>

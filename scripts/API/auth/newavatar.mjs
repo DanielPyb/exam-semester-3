@@ -1,5 +1,5 @@
-import { baseURL } from "../API/links.mjs";
-import { validateURL } from "../API/validate.mjs"
+import { baseURL } from "../links.mjs";
+import { validateURL } from "../../Validation/validate.mjs"
 const username = localStorage.getItem("username");
 
 export async function updateAvatar(){

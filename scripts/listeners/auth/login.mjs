@@ -1,4 +1,5 @@
-import { loginFunc } from "../functions/loginfunction.mjs";
+import { loginFunc } from "../../API/auth/loginfunction.mjs";
+
 const loginBTN = document.getElementById("login-btn")
 
 loginBTN.addEventListener("click", function(event){
