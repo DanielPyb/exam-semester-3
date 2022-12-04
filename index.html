@@ -11,6 +11,7 @@
     <!--<script src="/scripts/listeners/createListing.mjs" type="module" defer></script>-->
     <script src="/scripts/listeners/auth/newavatardriver.mjs" type="module" defer></script>
     <script src="/scripts/static/static.mjs" type="module" defer></script>
+    <script src="/scripts/listeners/listings/search.mjs" type="module" defer></script>
   </head>
 <body>
     <nav class="navbar navbar-expand-md">
@@ -67,7 +68,7 @@
     <div class="container py-4">
         <div class="row">
             <div class="col">
-            <input class="form-control me-2" type="search" placeholder="Search listings" aria-label="Search">
+            <input class="form-control me-2" type="search" placeholder="Search listings" aria-label="Search" id="search-listing">
             </div>
             <div class="col">
                 <button class="btn-primary btn" id="new-listing-btn" style="width: 100%">Create new listing</button>
