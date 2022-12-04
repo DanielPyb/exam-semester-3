@@ -7,10 +7,10 @@
     <title>Document</title>
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js" defer></script>
-    <script src="scripts/functions/logoutfunction.mjs" type="module" defer></script>
-    <script src="scripts/renders/login.mjs" type="module" defer></script>
-    <script src="scripts/renders/register.mjs" type="module" defer></script>
-    
+    <script src="scripts/listeners/auth/login.mjs" type="module" defer></script>
+    <script src="scripts/listeners/auth/logout.mjs" type="module" defer></script>
+    <script src="scripts/listeners/auth/register.mjs" type="module" defer></script>
+    <script src="scripts/listeners/display/toggleLoginRegister.mjs" type="module" defer></script>
     
 </head>
 <body>
@@ -65,12 +65,15 @@
     </nav>
 
 
-    <div class="container">
+    <div class="container row" style="margin:0 auto">
+      <div class="col">
     <div>
         <img src="img/Gavel_0001.png" width="100%">
     </div>
+    </div>
+    <div class="col">
     <div>
-    <div id="login-div">
+    <div id="login-div" style="display: none;">
         <form>
             <h2>Log in</h2>
             <div class="mb-3">
@@ -86,10 +89,10 @@
             <button type="submit" class="btn btn-primary" id="login-btn">Log in</button>
           </form>
              <p>Don't have an account? </br>
-                <span><a href="#">Register here!</a></span></p>
+                <span class="toggle-register">Register here!</span></p>
         </div>
           
-    <div id="register-div">
+    <div id="register-div" style="display: block;">
         <form>
             <h2>Register</h2>
             <div class="mb-3">
@@ -120,9 +123,10 @@
             <button type="submit" class="btn btn-primary" id="register-btn">Register</button>
           </form>
         <p>Allready have an account? </br>
-        <span><a href="#">Log in here!</a></span></p>
+        <span class="toggle-register">Log in here!</span></p>
     </div>
     </div>
+  </div>
     </div>
     <footer>
 
