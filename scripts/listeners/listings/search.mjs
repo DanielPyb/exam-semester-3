@@ -1,5 +1,5 @@
 import { getListingsArray } from "../../API/listings/getListingsArray.mjs";
-import { getListings } from "../../template/renderposts.mjs";
+import { displayListing } from "../../template/postRendering.mjs";
 
 
 const searchBar = document.getElementById("search-listing");
@@ -16,5 +16,5 @@ function newListingList(e) {
   const result = getAllListingsArray.filter((listing) =>
     listing.title.toLowerCase().includes(e.target.value.toLowerCase())
   );
-  getListings(result, listingsContainer);
+  displayListing(result, listingsContainer);
 }

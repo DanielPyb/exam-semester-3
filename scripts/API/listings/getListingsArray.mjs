@@ -9,7 +9,7 @@ export async function getListingsArray(sort, sortOrder){
       }
   }
   try{
-    const response = await fetch(`${baseURL}/auction/listings?sort=${sort}&sortOrder=${sortOrder}&_seller=true&_bids`, options)
+    const response = await fetch(`${baseURL}/auction/listings?sort=${sort}&sortOrder=${sortOrder}&_seller=true&_bids=true`, options)
     const data = await response.json();
     return data;
     }catch(error){
