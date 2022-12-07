@@ -1,6 +1,7 @@
 import { bidCall } from "../API/listings/bid.mjs";
 import { getListingsArray } from "../API/listings/getListingsArray.mjs";
 import { isLoggedIn } from "../Validation/loginCheck.mjs";
+import { carouselRender } from "./renderCarousel.mjs";
 
 const listingsContainer = document.getElementById("active-listings");
 const postArray = await getListingsArray("created", "desc");
@@ -47,90 +48,9 @@ export function displayListing(arr, container) {
 
     const mediaContainer = document.createElement("div");
     cardBodyEl.append(mediaContainer);
-    if (media.length > 0) {
-      const carouselControlsEl = document.createElement("div");
-      carouselControlsEl.setAttribute("id", "carouselCntrl" + "-" + id);
-      carouselControlsEl.setAttribute("data-ride", "carousel");
-      carouselControlsEl.className = "carousel slide";
-      mediaContainer.append(carouselControlsEl);
 
-      const carouselInner = document.createElement("div");
-      carouselInner.className = "carousel-inner";
-      carouselControlsEl.append(carouselInner);
+    carouselRender(media, id, mediaContainer);
 
-      let i = 0;
-      media.forEach((img) => {
-        const carouselItem = document.createElement("div");
-        if (i === 0) {
-          carouselItem.className = "carousel-item active";
-        } else {
-          carouselItem.className = "carousel-item";
-        }
-        carouselInner.append(carouselItem);
-
-        const carouselImage = document.createElement("img");
-        carouselImage.className = "d-block w-100";
-        carouselImage.setAttribute("src", img);
-        carouselImage.setAttribute(
-          "alt",
-          "This is a photo of the item that's for sale"
-        );
-        carouselItem.append(carouselImage);
-        i++;
-      });
-      if (media.length > 1) {
-        const carouselControlPrev = document.createElement("a");
-        carouselControlPrev.setAttribute("href", "#carouselCntrl" + "-" + id);
-        carouselControlPrev.setAttribute("role", "button");
-        carouselControlPrev.setAttribute("data-slide", "prev");
-        carouselControlPrev.className = "carousel-control-prev"
-        carouselControlsEl.append(carouselControlPrev);
-
-        const carouselPrevIcon = document.createElement("span");
-        carouselPrevIcon.className = "carousel-control-prev-icon";
-        carouselPrevIcon.setAttribute("aria-hidden", "true");
-        carouselControlPrev.append(carouselPrevIcon);
-
-        const carouselPrevIconSR = document.createElement("span");
-        carouselPrevIconSR.innerHTML = "Previous";
-        carouselPrevIconSR.className = "sr-only";
-        carouselControlPrev.append(carouselPrevIconSR);
-
-        const carouselControlNext = document.createElement("a");
-        carouselControlNext.setAttribute("href", "#carouselCntrl" + "-" + id);
-        carouselControlNext.setAttribute("role", "button");
-        carouselControlNext.setAttribute("data-slide", "next");
-        carouselControlNext.className = "carousel-control-next"
-        carouselControlsEl.append(carouselControlNext);
-
-
-        const carouselNextIcon = document.createElement("span");
-        carouselNextIcon.className = "carousel-control-next-icon";
-        carouselNextIcon.setAttribute("aria-hidden", "true");
-        carouselControlNext.append(carouselNextIcon);
-
-        const carouselNextIconSR = document.createElement("span");
-        carouselNextIconSR.innerHTML = "next";
-        carouselNextIconSR.className = "sr-only";
-        carouselControlNext.append(carouselNextIconSR);
-      }
-
-      /*
-            media.forEach(img => {
-            const imageEl = document.createElement("img");
-            imageEl.setAttribute("alt", "This is a photo of the item that's for sale");
-            imageEl.setAttribute("style", "width:100%")
-            imageEl.setAttribute("src", img)
-            mediaContainer.append(imageEl);
-        })
-*/
-    } else {
-      const imageEl = document.createElement("img");
-      imageEl.setAttribute("alt", "this listing does not have a photo");
-      imageEl.setAttribute("style", "width:100%");
-      imageEl.setAttribute("src", "img/Gavel_0001.png");
-      mediaContainer.append(imageEl);
-    }
     const descriptionEl = document.createElement("p");
     descriptionEl.className = "card-text";
     descriptionEl.innerHTML = description;
@@ -159,17 +79,16 @@ export function displayListing(arr, container) {
     footerColOne.append(timeLeftAnnounce);
 
     const timeLeftEl = document.createElement("h4");
+    //issue where it believes that november is december
     const endDate = new Date(endsAt);
-    timeLeftEl.innerHTML =
-      endDate.getDate() +
-      "-" +
-      endDate.getMonth() +
-      "-" +
-      endDate.getFullYear();
+    timeLeftEl.innerHTML = endDate.toLocaleDateString()
+    timeLeftEl.setAttribute("style", "font-size: 1.2rem")
     footerColOne.append(timeLeftEl);
+
 
     const sellerEl = document.createElement("p");
     sellerEl.innerHTML = seller.name;
+    if(seller.name === localStorage.getItem("username")) sellerEl.setAttribute("style", "font-weight: 700")
     footerColOne.append(sellerEl);
 
     // bidder info
@@ -221,7 +140,7 @@ export function displayListing(arr, container) {
       const bidBtn = document.createElement("button");
       bidBtn.setAttribute("type", "submit");
       bidBtn.innerHTML = "Bid!";
-      bidBtn.className = "btn btn-primary m-3";
+      bidBtn.className = "btn btn-primary m-3 bid-btn";
       bidBtn.setAttribute("id", id);
       bidForm.append(bidBtn);
     } else {
@@ -231,7 +150,7 @@ export function displayListing(arr, container) {
     }
   });
   const forms = container.querySelectorAll("forms");
-  const btns = container.querySelectorAll("button");
+  const btns = container.querySelectorAll(".bid-btn");
   btns.forEach((btn) => {
     btn.addEventListener("click", function (event) {
       event.preventDefault();
