@@ -20,7 +20,7 @@ export function displayListing(arr, container) {
     } = listing;
 
     const columnEl = document.createElement("div");
-    columnEl.className = "col-sm-12 col-md-4 py-3";
+    columnEl.className = "col-sm-12 col-md-6 col-lg-4 py-3";
     container.append(columnEl);
 
     const cardEl = document.createElement("div");
@@ -81,14 +81,14 @@ export function displayListing(arr, container) {
     const timeLeftEl = document.createElement("h4");
     //issue where it believes that november is december
     const endDate = new Date(endsAt);
-    timeLeftEl.innerHTML = endDate.toLocaleDateString()
-    timeLeftEl.setAttribute("style", "font-size: 1.2rem")
+    timeLeftEl.innerHTML = endDate.toLocaleDateString();
+    timeLeftEl.setAttribute("style", "font-size: 1.2rem");
     footerColOne.append(timeLeftEl);
-
 
     const sellerEl = document.createElement("p");
     sellerEl.innerHTML = seller.name;
-    if(seller.name === localStorage.getItem("username")) sellerEl.setAttribute("style", "font-weight: 700")
+    if (seller.name === localStorage.getItem("username"))
+      sellerEl.setAttribute("style", "font-weight: 700");
     footerColOne.append(sellerEl);
 
     // bidder info
@@ -108,7 +108,8 @@ export function displayListing(arr, container) {
 
       const bidderEl = document.createElement("p");
       bidderEl.innerHTML = bids[bids.length - 1].bidderName;
-      if(bids[bids.length - 1].bidderName === localStorage.getItem("username")) bidderEl.setAttribute("style", "font-weight: 700")
+      if (bids[bids.length - 1].bidderName === localStorage.getItem("username"))
+        bidderEl.setAttribute("style", "font-weight: 700");
       footerColTwo.append(bidderEl);
     } else {
       const currentBidEl = document.createElement("h4");
@@ -134,7 +135,7 @@ export function displayListing(arr, container) {
 
       const bidInput = document.createElement("input");
       bidInput.setAttribute("type", "number");
-        bidInput.setAttribute("style", "width:100%")
+      bidInput.setAttribute("style", "width:100%");
       bidForm.append(bidInput);
 
       const bidBtn = document.createElement("button");
@@ -154,7 +155,7 @@ export function displayListing(arr, container) {
   btns.forEach((btn) => {
     btn.addEventListener("click", function (event) {
       event.preventDefault();
-      bidCall(btn.id, btn.previousElementSibling.value)
+      bidCall(btn.id, btn.previousElementSibling.value);
     });
   });
 }
