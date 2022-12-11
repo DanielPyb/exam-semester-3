@@ -5,6 +5,7 @@ import {
   validateURL,
   validateUsername,
 } from "../../Validation/validate.mjs";
+import { errorTextDisplayToggle } from "../../Validation/errorMessages/errorDisplay.mjs";
 
 export async function registerFunc() {
   const registerUsername = document.getElementById("register-username");
@@ -14,19 +15,50 @@ export async function registerFunc() {
   const registerPasswordConfirm = document.getElementById(
     "register-password-2"
   );
-
+  let API_REQUEST = false;
   const registerObject = {
     name: registerUsername.value,
     email: registerEmail.value,
     avatar: registerAvatar.value,
     password: registerPassword.value,
   };
-  if (
-    validateUsername(registerUsername.value) &&
-    validateURL(registerAvatar.value) &&
-    validateEmail(registerEmail.value) &&
-    validatePassword(registerPassword, registerPasswordConfirm)
-  ) {
+  const registerEmailErrorText = document.getElementById(
+    "email-register-error"
+  );
+  if (validateEmail(registerEmail.value) === true)
+    errorTextDisplayToggle(registerEmailErrorText, true);
+  else {
+    errorTextDisplayToggle(registerEmailErrorText, false);
+  }
+  const registerUsernameErrorText = document.getElementById(
+    "username-register-error"
+  );
+  if (validateUsername(registerUsername.value) === true)
+    errorTextDisplayToggle(registerUsernameErrorText, true);
+  else {
+    errorTextDisplayToggle(registerUsernameErrorText, false);
+  }
+  const avatarRegisterErrorText = document.getElementById(
+    "avatar-register-error"
+  );
+  if (validateURL(registerAvatar.value) === true)
+    errorTextDisplayToggle(avatarRegisterErrorText, true);
+  else {
+    errorTextDisplayToggle(avatarRegisterErrorText, false);
+  }
+  const ERRORpassword_1_register = document.getElementById("password-error");
+  const ERRORpassword_2_register = document.getElementById("password-error-2");
+
+  if (validatePassword(registerPassword === registerPasswordConfirm)) {
+    errorTextDisplayToggle(ERRORpassword_1_register, true);
+    errorTextDisplayToggle(ERRORpassword_2_register, true);
+    API_REQUEST = true;
+  } else {
+    errorTextDisplayToggle(ERRORpassword_1_register, false);
+    errorTextDisplayToggle(ERRORpassword_2_register, false);
+    return;
+  }
+  if (API_REQUEST) {
     const options = {
       method: "POST",
       headers: {
