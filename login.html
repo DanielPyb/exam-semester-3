@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/customStyle.css">
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js" defer></script>
     <script src="scripts/listeners/auth/login.mjs" type="module" defer></script>
     <script src="scripts/listeners/auth/logout.mjs" type="module" defer></script>
@@ -14,10 +15,10 @@
     
 </head>
 <body>
-    <nav class="navbar navbar-expand-md">
-        <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
+  <nav class="navbar navbar-expand-md navbar-dark bg-secondary p-3">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -65,10 +66,10 @@
     </nav>
 
 
-    <div class="container row" style="margin:0 auto">
-      <div class="col">
+    <div class="container row login-register">
+      <div class="col small-invis">
     <div>
-        <img src="img/Gavel_0001.png" width="100%">
+        <img src="img/Gavel_0001.png" width="100%" alt="Purple gavel and block">
     </div>
     </div>
     <div class="col">

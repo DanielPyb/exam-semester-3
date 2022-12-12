@@ -39,6 +39,7 @@ export function displayListing(arr, container) {
 
     const titleEl = document.createElement("h2");
     titleEl.innerHTML = title;
+    titleEl.classList.add("short-text-title")
     titleLink.append(titleEl);
 
     // card body elements
@@ -54,6 +55,7 @@ export function displayListing(arr, container) {
     const descriptionEl = document.createElement("p");
     descriptionEl.className = "card-text";
     descriptionEl.innerHTML = description;
+    descriptionEl.classList.add("short-text-para")
     cardBodyEl.append(descriptionEl);
 
     // card footer elements
