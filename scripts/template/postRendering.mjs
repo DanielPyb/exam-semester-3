@@ -84,7 +84,7 @@ export function displayListing(arr, container) {
     //issue where it believes that november is december
     const endDate = new Date(endsAt);
     timeLeftEl.innerHTML = endDate.toLocaleDateString();
-    timeLeftEl.setAttribute("style", "font-size: 1.2rem");
+    timeLeftEl.setAttribute("style", "font-size: 1rem");
     footerColOne.append(timeLeftEl);
 
     const sellerEl = document.createElement("p");
