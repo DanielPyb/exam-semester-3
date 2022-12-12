@@ -85,23 +85,22 @@
             <div class="mb-3 col">
               <label for="title-listing" class="form-label">Title</label>
               <input type="text" class="form-control" id="title-listing" aria-describedby="title for new listing">
-              <div id="title-error" class="form-text">Your listing needs a title</div>
+              <div id="title-error" class="form-text text-danger" style="display: none;">Your listing needs a title</div>
             </div>
             <div class="mb-3 col">
                 <label for="listing-date" class="form-label">Deadline</label>
                 <input type="date" class="form-control" id="listing-date" aria-describedby="deadline">
-                <div id="avatar-register-error" class="form-text">We need an end-date for the item</div>
+                <div id="date-register-error" class="form-text text-danger" style="display: none;">We need an end-date for the item</div>
               </div>
             </div>
             <div class="mb-3">
               <label for="listing-description" class="form-label">Description</label>
               <textarea class="form-control" id="listing-description" rows="8"></textarea>
-              <div id="description-error" class="form-text">Your passwords does not match</div>
             </div>
             <div class="mb-3">
               <label for="title-photo" class="form-label">Title</label>
               <input type="text" class="form-control" id="title-photo" aria-describedby="title for new listing">
-              <div id="photo-error" class="form-text">Your listing needs a title</div>
+              <div id="photo-error" class="form-text text-danger" style="display: none;">Your photo needs to be a URL</div>
               </div>
             <button type="submit" class="btn btn-primary" id="listing-btn">Create a new listing</button>
           </form>

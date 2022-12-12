@@ -15,6 +15,7 @@ export async function registerFunc() {
   const registerPasswordConfirm = document.getElementById(
     "register-password-2"
   );
+  // storing a final requirement for sending a request
   let API_REQUEST = false;
   const registerObject = {
     name: registerUsername.value,
@@ -22,6 +23,7 @@ export async function registerFunc() {
     avatar: registerAvatar.value,
     password: registerPassword.value,
   };
+  // Register Errors
   const registerEmailErrorText = document.getElementById(
     "email-register-error"
   );

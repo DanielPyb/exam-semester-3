@@ -27,3 +27,22 @@ export function validatePassword(value1, value2) {
     return false;
   }
 }
+
+export function validateTitle(string) {
+  if(string.value.length > 3){
+    return true;}
+    else{
+      return false;
+    }
+  }
+
+
+export function validateDeadline(date){
+  const date_one = new Date(date)
+  const todaysDate = new Date()
+  if(date_one > todaysDate){
+    return true;
+  } else {
+    return false;
+  }
+}
