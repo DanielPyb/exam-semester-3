@@ -1,8 +1,17 @@
-@import "../node_modules/bootstrap/scss/bootstrap.scss";
+// custom css classes and mixins
+@mixin text-overflow($lines) {
+  @content;
+  display: webkit-box;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $lines;
+}
 
+.short-text-title {
+  @include text-overflow(1);
+}
 
-//custom css classes
-
-.img-large{
-    display: none;
+.short-text-para {
+  @include text-overflow(3);
 }
