@@ -1,5 +1,30 @@
 {
   "dependencies": {
-    "bootstrap": "^5.2.3"
-  }
+    "@popperjs/core": "^2.11.6",
+    "bootstrap": "^5.2.3",
+    "sass": "^1.56.2"
+  },
+  "name": "exam-semester-3",
+  "description": "This project was created for my exam at noroff winter 2022",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "sass scss:styles",
+    "watch": "sass --watch scss:styles"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanielPyb/exam-semester-3.git"
+  },
+  "keywords": [
+    "exam",
+    "noroff",
+    "semster-3"
+  ],
+  "author": "Daniel Pybus Sollid",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DanielPyb/exam-semester-3/issues"
+  },
+  "homepage": "https://github.com/DanielPyb/exam-semester-3#readme"
 }

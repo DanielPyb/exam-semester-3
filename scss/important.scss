@@ -1,0 +1,13 @@
+// main rules
+body {
+  font-family: "poppins" !important;
+}
+
+//Images for carousel
+
+img.d-block {
+  min-height: 350px;
+  width: 100%;
+  object-fit: cover;
+  object-position: center center;
+}

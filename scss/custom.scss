@@ -1,71 +1,20 @@
-//Modifying Default Variables
+// boostrap overide variables
+@import "variables.scss";
 
-$primary: #0a103d;
-$secondary: #190837;
+//navbar styles
+@import "navBar.scss";
 
-$bs-card-cap-bg: #fff;
+// mediaqueries
+@import "mediaqueries.scss";
 
-$btn-color: #000;
+//mixins
+@import "mixins.scss";
 
+//important rules
+@import "important.scss";
 
-//customizing bootstrap css
+//login page
+@import "login.scss";
+
+//bootstrap css
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
-
-// main rules
-body{
-  font-family: "poppins";
-}
-
-// Navbar
-#credit-btn{
-  color: #fff;
-  font-weight: 600;
-}
-
-.navbar-nav .nav-link {
-  margin-left: 20px;
-  padding: 5px;
-  border-radius: 10px;
-  border: 2px solid $primary;
-  background-color: #a791ca;
-}
-
-// login
-
-.login-register{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-}
-
-.small-invis{
-  display: none;
-}
-
-// custom css classes and mixins
-@mixin text-overflow($lines) {
-  @content;
-  display: -webkit-box;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: $lines;
-  word-break: break-word;
-}
-
-.short-text-title {
-  @include text-overflow(1);
-}
-
-.short-text-para {
-  @include text-overflow(3);
-}
-
-//media queries
-
-@media only screen and (min-width: 768px) {
-  .small-invis{
-    display: block;
-  }
-}
