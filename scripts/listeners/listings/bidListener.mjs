@@ -9,7 +9,6 @@ const currentID = (searchParams.get("id"));
 
 bidBTN.addEventListener("click", function(event){
     const bidAmount2 = document.getElementById("bid-amount2")
-    console.log(bidAmount2)
     event.preventDefault();
     bidCall(currentID, bidAmount2.value)
 })

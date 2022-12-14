@@ -78,7 +78,7 @@ export async function registerFunc() {
         alert(result.message);
       }
     } catch (error) {
-      console.log(error);
+      alert(error);
     }
   }
 }

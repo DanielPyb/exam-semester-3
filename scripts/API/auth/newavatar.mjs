@@ -4,9 +4,6 @@ const username = localStorage.getItem("username");
 
 export async function updateAvatar(){
     const newAvatarIMG = document.getElementById("avatar-photo")
-    console.log(newAvatarIMG)
-    console.log(newAvatarIMG.value)
-    console.log("hello")
     if(validateURL(newAvatarIMG.value)){
         const avatarUpdate = {
             "avatar": newAvatarIMG.value};
@@ -29,7 +26,5 @@ export async function updateAvatar(){
         } catch (error){
             alert(error);
         }
-    } else {
-        console.log("something went wrong");
     }
 }

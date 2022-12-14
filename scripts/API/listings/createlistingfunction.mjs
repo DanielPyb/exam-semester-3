@@ -45,7 +45,6 @@ export async function createListing() {
       media: [media.value],
       endsAt: isosDate
     }
-  console.log(newListing);
     const options = {
       method: "POST",
       headers: {
@@ -58,7 +57,7 @@ export async function createListing() {
       const response = await fetch(`${baseURL}/auction/listings`, options)
       const result = await response.json();
     } catch(error){
-      console.log(error)
+      alert(error)
     }
 }
 }

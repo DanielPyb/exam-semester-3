@@ -11,6 +11,4 @@ const singleProductContainer = document.getElementById(
 );
 const singleProductInfo = await singleProduct(currentID);
 
-console.log(singleProductInfo);
-
 await SingleProductRenderer(singleProductInfo, singleProductContainer);

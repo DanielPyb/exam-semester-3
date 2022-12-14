@@ -28,7 +28,6 @@ export async function loginFunc() {
   try {
     const response = await fetch(`${baseURL}/auction/auth/login`, options);
     const result = await response.json();
-    console.log(result);
     localStorage.setItem("accessToken", result.accessToken);
     localStorage.setItem("username", result.name);
     if (response.status == 200) {
