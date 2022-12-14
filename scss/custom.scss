@@ -1,3 +1,6 @@
+//bootstrap css
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
 // boostrap overide variables
 @import "variables.scss";
 
@@ -21,6 +24,3 @@
 
 //edit bootstrap
 @import "editBS.scss";
-
-//bootstrap css
-@import "../node_modules/bootstrap/scss/bootstrap.scss";

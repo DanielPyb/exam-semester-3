@@ -71,7 +71,7 @@ export async function SingleProductRenderer(SP, container) {
   //issue where it believes that november is december
   const endDate = new Date(endsAt);
   timeLeftEl.innerHTML = endDate.toLocaleDateString();
-  timeLeftEl.setAttribute("style", "font-size: 1.2rem");
+  timeLeftEl.classList.add("tabular-font");
   footerColOne.append(timeLeftEl);
 
   const sellerEl = document.createElement("p");
@@ -92,6 +92,7 @@ export async function SingleProductRenderer(SP, container) {
 
   if (bids.length > 0) {
     const currentBidEl = document.createElement("h4");
+    currentBidEl.classList.add("tabular-font");
     currentBidEl.innerHTML = bids[bids.length - 1].amount;
     footerColTwo.append(currentBidEl);
 
@@ -102,6 +103,7 @@ export async function SingleProductRenderer(SP, container) {
     footerColTwo.append(bidderEl);
   } else {
     const currentBidEl = document.createElement("h4");
+    currentBidEl.classList.add("tabular-font");
     currentBidEl.innerHTML = 0;
     footerColTwo.append(currentBidEl);
 
@@ -130,7 +132,7 @@ export async function SingleProductRenderer(SP, container) {
     const bidBtn = document.createElement("button");
     bidBtn.setAttribute("type", "submit");
     bidBtn.innerHTML = "Bid!";
-    bidBtn.className = "btn btn-primary m-3 bid-btn";
+    bidBtn.className = "btn btn-purple-full m-3 bid-btn";
     bidBtn.setAttribute("id", id);
     bidForm.append(bidBtn);
   } else {

@@ -1,5 +1,4 @@
 import { singleProduct } from "../../API/listings/singleproduct.mjs";
-import { singleProductRender } from "../../template/singleproduct-render.mjs";
 import { SingleProductRenderer } from "../../template/singleProductRender.mjs";
 
 const paramString = window.location.search;

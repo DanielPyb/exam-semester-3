@@ -2,6 +2,22 @@
 body {
   font-family: "poppins" !important;
   background-color: #F6F7FF;
+  color: $grey-v2 !important;
+}
+
+//h1 h2 h3 h4 h5
+
+h1, h2, h3, h4, h5{
+  color: $grey-v2 !important;
+}
+
+.link-class{
+  color: $grey-v2 !important;
+  text-decoration: underline !important;
+}
+
+.link-class:hover{
+  color: $grey-v2 !important;
 }
 
 //Images for carousel
@@ -46,7 +62,7 @@ img.d-block {
 .btn-green-full{
   background-color: $green-secondary !important;
   border: 2px solid $green-secondary !important;
-  font-weight: 600 !important;
+  font-weight: 700 !important;
   color: $background-color !important;
 }
 

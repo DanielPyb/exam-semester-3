@@ -33,7 +33,7 @@ export function displayListing(arr, container) {
     cardEl.append(cardHeaderEl);
 
     const titleLink = document.createElement("a");
-    titleLink.className = "link-primary";
+    titleLink.className = "link-class";
     titleLink.setAttribute("href", "single-product.html?id=" + id);
     cardHeaderEl.append(titleLink);
 
