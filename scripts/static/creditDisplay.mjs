@@ -6,7 +6,7 @@ export async function creditDisplay(){
     if(isLoggedIn()){
         const username = localStorage.getItem("username")
         const avatarInfo = await getProfile(username)
-        credit.innerHTML = `Credit: ${avatarInfo.credits}`
+        credit.innerHTML = `Credit: <span class="tabular-font">${avatarInfo.credits}</span>`
     } else {
         credit.style.display = "none";
     }

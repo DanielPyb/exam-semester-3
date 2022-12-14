@@ -1,6 +1,7 @@
 // main rules
 body {
   font-family: "poppins" !important;
+  background-color: #F6F7FF;
 }
 
 //Images for carousel
@@ -10,4 +11,75 @@ img.d-block {
   width: 100%;
   object-fit: cover;
   object-position: center center;
+}
+
+//tabular font
+.tabular-font{
+  font-family: "calibri";
+  font-size: 2rem;
+}
+
+.btn-purple{
+  background-color: $purple-main !important;
+  border: 2px solid $purple-secondary !important;
+  font-weight: 700 !important;
+  color: $grey-v1 !important;
+}
+
+.btn-purple:hover{
+  background-color: $background-color !important;
+  color: $purple-secondary !important;
+}
+
+.btn-purple-full{
+  background-color: $purple-secondary !important;
+  border: 2px solid $purple-secondary !important;
+  font-weight: 600 !important;
+  color: $background-color !important;
+}
+
+.btn-purple-full:hover{
+  background-color: $background-color !important;
+  color: $purple-secondary !important;
+}
+
+.btn-green-full{
+  background-color: $green-secondary !important;
+  border: 2px solid $green-secondary !important;
+  font-weight: 600 !important;
+  color: $background-color !important;
+}
+
+.btn-green-full:hover{
+  background-color: $background-color !important;
+  color: $green-secondary !important;
+}
+
+.btn-pink{
+  background-color: $pink-main !important;
+  border: 1.5px solid $pink-secondary !important;
+  font-weight: 600 !important;
+  color: $grey-v1 !important;
+}
+
+.btn-pink:hover{
+  background-color: $background-color !important;
+  color: $pink-secondary !important;
+}
+
+.form-control:focus{
+  border-color: $purple-main !important;
+  box-shadow: 0 0 0 0.25rem #806fc482 !important;
+}
+
+.btn-peach-full{
+  background-color: $peach-secondary !important;
+  border: 2px solid $peach-secondary !important;
+  color: $background-color !important;
+  font-weight: 700 !important;
+}
+
+.btn-peach-full:hover{
+  background-color: $background-color !important;
+  color: $peach-secondary !important;
 }

@@ -1,0 +1,14 @@
+.card-header, .card-footer{
+    background-color: $pink-main !important;
+    border: 0.5px solid $pink-secondary !important;
+}
+
+.card-body{
+    background-color: #FFF8FF !important;
+    border-left: 0.5px solid $pink-secondary !important;
+    border-right: 0.5px solid $pink-secondary !important;
+}
+
+.carousel-indicators > [data-bs-target]{
+    background-color: $pink-secondary !important;
+}

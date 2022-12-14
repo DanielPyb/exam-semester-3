@@ -106,6 +106,7 @@ export function displayListing(arr, container) {
     if (bids.length > 0) {
       const currentBidEl = document.createElement("h4");
       currentBidEl.innerHTML = bids[bids.length - 1].amount;
+      currentBidEl.classList.add("tabular-font")
       footerColTwo.append(currentBidEl);
 
       const bidderEl = document.createElement("p");
@@ -116,6 +117,7 @@ export function displayListing(arr, container) {
     } else {
       const currentBidEl = document.createElement("h4");
       currentBidEl.innerHTML = 0;
+      currentBidEl.classList.add("tabular-font")
       footerColTwo.append(currentBidEl);
 
       const bidderEl = document.createElement("p");
@@ -143,7 +145,7 @@ export function displayListing(arr, container) {
       const bidBtn = document.createElement("button");
       bidBtn.setAttribute("type", "submit");
       bidBtn.innerHTML = "Bid!";
-      bidBtn.className = "btn btn-primary m-3 bid-btn";
+      bidBtn.className = "btn btn-purple-full m-3 bid-btn";
       bidBtn.setAttribute("id", id);
       bidForm.append(bidBtn);
     } else {

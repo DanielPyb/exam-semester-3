@@ -1,15 +1,32 @@
 @charset "UTF-8";
 #credit-btn {
-  color: #fff;
+  color: #5C5C5C;
   font-weight: 600;
+  font-size: 2rem;
 }
 
 .navbar-nav .nav-link {
   margin-left: 20px;
   padding: 5px;
-  border-radius: 10px;
-  border: 2px solid #0a103d;
-  background-color: #a791ca;
+  border-radius: 5px;
+  border: 2px solid #7668AB;
+  background-color: #7668AB;
+  font-weight: 600;
+  color: #F6F7FF;
+}
+
+.navbar-nav .active {
+  background-color: #F6F7FF;
+  color: #7668AB !important;
+}
+
+.nav-link:hover {
+  background-color: #F6F7FF;
+  color: #7668AB !important;
+}
+
+.navbar {
+  background-color: #D4D8FE;
 }
 
 .small-invis {
@@ -41,6 +58,7 @@
 
 body {
   font-family: "poppins" !important;
+  background-color: #F6F7FF;
 }
 
 img.d-block {
@@ -50,11 +68,100 @@ img.d-block {
   object-position: center center;
 }
 
+.tabular-font {
+  font-family: "calibri";
+  font-size: 2rem;
+}
+
+.btn-purple {
+  background-color: #D4D8FE !important;
+  border: 2px solid #7668AB !important;
+  font-weight: 700 !important;
+  color: #5C5C5C !important;
+}
+
+.btn-purple:hover {
+  background-color: #F6F7FF !important;
+  color: #7668AB !important;
+}
+
+.btn-purple-full {
+  background-color: #7668AB !important;
+  border: 2px solid #7668AB !important;
+  font-weight: 600 !important;
+  color: #F6F7FF !important;
+}
+
+.btn-purple-full:hover {
+  background-color: #F6F7FF !important;
+  color: #7668AB !important;
+}
+
+.btn-green-full {
+  background-color: #4B7D47 !important;
+  border: 2px solid #4B7D47 !important;
+  font-weight: 600 !important;
+  color: #F6F7FF !important;
+}
+
+.btn-green-full:hover {
+  background-color: #F6F7FF !important;
+  color: #4B7D47 !important;
+}
+
+.btn-pink {
+  background-color: #FDD1FF !important;
+  border: 1.5px solid #E69EEA !important;
+  font-weight: 600 !important;
+  color: #5C5C5C !important;
+}
+
+.btn-pink:hover {
+  background-color: #F6F7FF !important;
+  color: #E69EEA !important;
+}
+
+.form-control:focus {
+  border-color: #D4D8FE !important;
+  box-shadow: 0 0 0 0.25rem rgba(128, 111, 196, 0.5098039216) !important;
+}
+
+.btn-peach-full {
+  background-color: #BD584F !important;
+  border: 2px solid #BD584F !important;
+  color: #F6F7FF !important;
+  font-weight: 700 !important;
+}
+
+.btn-peach-full:hover {
+  background-color: #F6F7FF !important;
+  color: #BD584F !important;
+}
+
 .login-register {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+}
+
+.card-header, .card-footer {
+  background-color: #FDD1FF !important;
+  border: 0.5px solid #E69EEA !important;
+}
+
+.card-body {
+  background-color: #FFF8FF !important;
+  border-left: 0.5px solid #E69EEA !important;
+  border-right: 0.5px solid #E69EEA !important;
+}
+
+.carousel-indicators > [data-bs-target] {
+  background-color: #E69EEA !important;
+}
+
+.text-danger {
+  color: #BD584F !important;
 }
 
 /*!
