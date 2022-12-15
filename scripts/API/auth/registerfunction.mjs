@@ -12,9 +12,7 @@ export async function registerFunc() {
   const registerEmail = document.getElementById("register-email");
   const registerAvatar = document.getElementById("register-avatar");
   const registerPassword = document.getElementById("register-password-1");
-  const registerPasswordConfirm = document.getElementById(
-    "register-password-2"
-  );
+  const registerPasswordConfirm = document.getElementById("register-password-2");
   // storing a final requirement for sending a request
   let API_REQUEST = false;
   const registerObject = {
@@ -27,31 +25,31 @@ export async function registerFunc() {
   const registerEmailErrorText = document.getElementById(
     "email-register-error"
   );
-  if (validateEmail(registerEmail.value) === true)
-    errorTextDisplayToggle(registerEmailErrorText, true);
+  if (validateEmail(registerEmail.value) === true){
+    errorTextDisplayToggle(registerEmailErrorText, true);}
   else {
     errorTextDisplayToggle(registerEmailErrorText, false);
   }
   const registerUsernameErrorText = document.getElementById(
     "username-register-error"
   );
-  if (validateUsername(registerUsername.value) === true)
+  if (validateUsername(registerUsername.value) === true){
     errorTextDisplayToggle(registerUsernameErrorText, true);
-  else {
+  } else {
     errorTextDisplayToggle(registerUsernameErrorText, false);
   }
   const avatarRegisterErrorText = document.getElementById(
     "avatar-register-error"
   );
-  if (validateURL(registerAvatar.value) === true)
+  if (validateURL(registerAvatar.value) === true){
     errorTextDisplayToggle(avatarRegisterErrorText, true);
-  else {
+  } else {
     errorTextDisplayToggle(avatarRegisterErrorText, false);
   }
   const ERRORpassword_1_register = document.getElementById("password-error");
   const ERRORpassword_2_register = document.getElementById("password-error-2");
 
-  if (validatePassword(registerPassword === registerPasswordConfirm)) {
+  if (validatePassword(registerPassword, registerPasswordConfirm)) {
     errorTextDisplayToggle(ERRORpassword_1_register, true);
     errorTextDisplayToggle(ERRORpassword_2_register, true);
     API_REQUEST = true;
@@ -73,7 +71,6 @@ export async function registerFunc() {
       const result = await response.json();
       if (response.status == 201) {
         alert("new profile created");
-        toggleRegister();
       } else {
         alert(result.message);
       }

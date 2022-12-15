@@ -138,6 +138,7 @@ export function displayListing(arr, container) {
       footerColThree.append(bidForm);
 
       const bidInput = document.createElement("input");
+      bidInput.classList.add("main-input")
       bidInput.setAttribute("type", "number");
       bidInput.setAttribute("style", "width:100%");
       bidForm.append(bidInput);
@@ -145,7 +146,7 @@ export function displayListing(arr, container) {
       const bidBtn = document.createElement("button");
       bidBtn.setAttribute("type", "submit");
       bidBtn.innerHTML = "Bid!";
-      bidBtn.className = "btn btn-purple-full m-3 bid-btn";
+      bidBtn.className = "btn btn-main-full m-3 bid-btn";
       bidBtn.setAttribute("id", id);
       bidForm.append(bidBtn);
     } else {

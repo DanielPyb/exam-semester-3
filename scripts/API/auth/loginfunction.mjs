@@ -2,7 +2,7 @@ import { errorTextDisplayToggle } from "../../Validation/errorMessages/errorDisp
 import { validateEmail } from "../../Validation/validate.mjs";
 import { baseURL } from "../links.mjs";
 
-const loginForm = document.getElementById("login-div");
+
 const email = document.getElementById("login-email");
 const password = document.getElementById("login-password");
 
@@ -12,12 +12,6 @@ export async function loginFunc() {
     email: email.value,
     password: password.value,
   };
-  const loginEmailErrorText = document.getElementById("email-login-error");
-  if (validateEmail(email.value) === true)
-    errorTextDisplayToggle(loginEmailErrorText, true);
-  else {
-    errorTextDisplayToggle(loginEmailErrorText, false);
-  }
   const options = {
     method: "POST",
     headers: {
@@ -28,12 +22,20 @@ export async function loginFunc() {
   try {
     const response = await fetch(`${baseURL}/auction/auth/login`, options);
     const result = await response.json();
-    localStorage.setItem("accessToken", result.accessToken);
-    localStorage.setItem("username", result.name);
     if (response.status == 200) {
+      localStorage.setItem("accessToken", result.accessToken);
+      localStorage.setItem("username", result.name);
       location.replace("index.html");
     } else {
-      alert(result.message);
+      const loginEmailErrorText = document.getElementById("email-login-error");
+      const passwordLoginErrorText = document.getElementById("password-login-error");
+      if (validateEmail(email.value) === true && password.value.length > 5){
+        errorTextDisplayToggle(loginEmailErrorText, true);
+        errorTextDisplayToggle(passwordLoginErrorText, true);}
+      else {
+        errorTextDisplayToggle(loginEmailErrorText, false);
+        errorTextDisplayToggle(passwordLoginErrorText, false);
+      }
     }
   } catch (error) {
     alert(error);

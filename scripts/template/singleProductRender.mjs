@@ -125,14 +125,14 @@ export async function SingleProductRenderer(SP, container) {
     footerColThree.append(bidForm);
 
     const bidInput = document.createElement("input");
+    bidInput.classList.add("pink-input", "single-input")
     bidInput.setAttribute("type", "number");
-    bidInput.setAttribute("style", "width:100%");
     bidForm.append(bidInput);
 
     const bidBtn = document.createElement("button");
     bidBtn.setAttribute("type", "submit");
     bidBtn.innerHTML = "Bid!";
-    bidBtn.className = "btn btn-purple-full m-3 bid-btn";
+    bidBtn.className = "btn btn-main-full m-3 bid-btn";
     bidBtn.setAttribute("id", id);
     bidForm.append(bidBtn);
   } else {

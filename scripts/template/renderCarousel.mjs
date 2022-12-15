@@ -32,6 +32,7 @@ export function carouselRender(media, id, container) {
 
       carouselImgEl.classList.add("d-block");
       carouselImgEl.setAttribute("src", img);
+      carouselImgEl.setAttribute("alt", "photo of the object that is for sale")
 
       if (i === 0) {
         carouselLiEL.classList.add("active");
@@ -84,7 +85,8 @@ export function carouselRender(media, id, container) {
     const carouselImgEl = document.createElement("img");
     carouselItem.classList.add("carousel-item", "active");
     carouselImgEl.classList.add("d-block", "w-100");
-    carouselImgEl.setAttribute("src", "img/Gavel_0001.png");
+    carouselImgEl.setAttribute("alt", "there is no phot available for this product")
+    carouselImgEl.setAttribute("src", "img/gavel_purple.png");
 
     innerCarouselEl.append(carouselItem);
     carouselItem.append(carouselImgEl);

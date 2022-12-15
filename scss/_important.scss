@@ -7,12 +7,16 @@ body {
 
 //h1 h2 h3 h4 h5
 
-h1, h2, h3, h4, h5{
+h1, h3, h4, h5{
   color: $grey-v2 !important;
 }
 
+h2{
+  color: $main-color-secondary !important;
+}
+
 .link-class{
-  color: $grey-v2 !important;
+  color: $main-color-secondary !important;
   text-decoration: underline !important;
 }
 
@@ -35,28 +39,28 @@ img.d-block {
   font-size: 2rem;
 }
 
-.btn-purple{
-  background-color: $purple-main !important;
-  border: 2px solid $purple-secondary !important;
+.btn-main{
+  background-color: $main-color !important;
+  border: 2px solid $main-color-secondary !important;
   font-weight: 700 !important;
   color: $grey-v1 !important;
 }
 
-.btn-purple:hover{
+.btn-main:hover{
   background-color: $background-color !important;
-  color: $purple-secondary !important;
+  color: $main-color-secondary !important;
 }
 
-.btn-purple-full{
-  background-color: $purple-secondary !important;
-  border: 2px solid $purple-secondary !important;
+.btn-main-full{
+  background-color: $main-color-secondary !important;
+  border: 2px solid $main-color-secondary !important;
   font-weight: 600 !important;
   color: $background-color !important;
 }
 
-.btn-purple-full:hover{
+.btn-main-full:hover{
   background-color: $background-color !important;
-  color: $purple-secondary !important;
+  color: $main-color-secondary !important;
 }
 
 .btn-green-full{
@@ -71,20 +75,9 @@ img.d-block {
   color: $green-secondary !important;
 }
 
-.btn-pink{
-  background-color: $pink-main !important;
-  border: 1.5px solid $pink-secondary !important;
-  font-weight: 600 !important;
-  color: $grey-v1 !important;
-}
-
-.btn-pink:hover{
-  background-color: $background-color !important;
-  color: $pink-secondary !important;
-}
 
 .form-control:focus{
-  border-color: $purple-main !important;
+  border-color: $main-color !important;
   box-shadow: 0 0 0 0.25rem #806fc482 !important;
 }
 
@@ -98,4 +91,15 @@ img.d-block {
 .btn-peach-full:hover{
   background-color: $background-color !important;
   color: $peach-secondary !important;
+}
+
+.main-input{
+  border: 1px solid $main-color-secondary;
+  border-radius: 5px;
+}
+
+.single-input{
+  width: 50%;
+  display: block;
+  margin: 0 auto;
 }

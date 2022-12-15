@@ -8,6 +8,6 @@ export async function avatarDisplay(){
         const avatarInfo = await getProfile(username);
         avatarContainer.innerHTML = `<img src="${avatarInfo.avatar}" style="width:100%">`
     }else{
-    avatarContainer.innerHTML = `<img src="img/Gavel_0001.png" style="width:100%">`
+    avatarContainer.innerHTML = `<img src="img/gavel_purple.png" style="width:100%">`
     }
 }

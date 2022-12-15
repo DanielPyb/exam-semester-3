@@ -52,7 +52,7 @@
             </a>
             <ul class="dropdown-menu" style="min-width: 375px">
               <li id="avatar-photo-container" class="dropdown-item">
-                <img src="img/Gavel_0001.png" style="width: 100%" />
+                <img src="img/gavel_purple.png" style="width: 100%" />
               </li>
               <li><hr class="dropdown-divider" /></li>
               <li>
@@ -92,10 +92,11 @@
             Log out
           </button>
           <button
+          type="button"
             class="btn btn-green-full"
-            type="submit"
             id="log-in-btn"
             style="display: none"
+            onClick="window.location.href='login.html'"
           >
             Log in
           </button>
@@ -108,7 +109,7 @@
     <div class="container row login-register">
       <div class="col small-invis">
     <div>
-        <img src="img/Gavel_0001.png" width="100%" alt="Purple gavel and block">
+        <img src="img/gavel_purple.png" width="100%" alt="Gavel and block">
     </div>
     </div>
     <div class="col">
@@ -126,7 +127,7 @@
               <input type="password" class="form-control" id="login-password">
               <div id="password-login-error" class="form-text text-danger" style="display: none">We could not find these credentials in our database</div>
             </div>
-            <button type="submit" class="btn btn-purple-full my-4" id="login-btn">Log in</button>
+            <button type="submit" class="btn btn-main-full my-4" id="login-btn">Log in</button>
           </form>
              <p>Don't have an account? </br>
                 <span class="toggle-register">Register here!</span></p>
@@ -160,7 +161,7 @@
                 <input type="password" class="form-control" id="register-password-2">
                 <div id="password-error-2" class="form-text text-danger" style="display: none">Your passwords does not match</div>
               </div>
-            <button type="submit" class="btn btn-purple-full my-4" id="register-btn">Register</button>
+            <button type="submit" class="btn btn-main-full my-4" id="register-btn">Register</button>
           </form>
         <p>Allready have an account? </br>
         <span class="toggle-register">Log in here!</span></p>
