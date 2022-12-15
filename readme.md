@@ -7,6 +7,8 @@ Then if you wish to change the color palette go into _variables.scss and change 
 
 npm run watch to see the updates from scss as soon as you save
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/cd1e78d4-66a5-4ccd-acb7-7723048e18e7/deploy-status)](https://app.netlify.com/sites/steady-tapioca-3e45c7/deploys)
+
 ### built with
 
 SCSS
