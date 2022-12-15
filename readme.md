@@ -5,7 +5,7 @@ Download or clone the github repository
 in terminal write npm install
 Then if you wish to change the color palette go into _variables.scss and change main color to one of the already created choices, or add your own variation
 
-npm run watch to see the updated from scss as soon as you save
+npm run watch to see the updates from scss as soon as you save
 
 ### built with
 
