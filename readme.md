@@ -2,7 +2,10 @@ This project was created for my exam at noroff winter 2022
 
 ## how to run
 Download or clone the github repository
-run the build or go onto the site through the link
+in terminal write npm install
+Then if you wish to change the color palette go into _variables.scss and change main color to one of the already created choices, or add your own variation
+
+npm run watch to see the updated from scss as soon as you save
 
 ### built with
 
@@ -31,8 +34,7 @@ Noroff API
 | ------------- |:-------------:|
 | A Gantt chart for project timing | :heavy_check_mark:    |
 | A design prototype      | :heavy_check_mark:    |
-| A style guide |     |
+| A style guide |  :heavy_check_mark:   |
 | A kanban project board |  :heavy_check_mark:    |
 | A repository link |  :heavy_check_mark:    |
-| A hosted application demo link |     |
-
+| A hosted application demo link |  :heavy_check_mark:   |
