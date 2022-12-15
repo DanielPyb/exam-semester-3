@@ -1,0 +1,105 @@
+// main rules
+body {
+  font-family: "poppins" !important;
+  background-color: #F6F7FF;
+  color: $grey-v2 !important;
+}
+
+//h1 h2 h3 h4 h5
+
+h1, h3, h4, h5{
+  color: $grey-v2 !important;
+}
+
+h2{
+  color: $main-color-secondary !important;
+}
+
+.link-class{
+  color: $main-color-secondary !important;
+  text-decoration: underline !important;
+}
+
+.link-class:hover{
+  color: $grey-v2 !important;
+}
+
+//Images for carousel
+
+img.d-block {
+  min-height: 350px;
+  width: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+//tabular font
+.tabular-font{
+  font-family: "calibri";
+  font-size: 2rem;
+}
+
+.btn-main{
+  background-color: $main-color !important;
+  border: 2px solid $main-color-secondary !important;
+  font-weight: 700 !important;
+  color: $grey-v1 !important;
+}
+
+.btn-main:hover{
+  background-color: $background-color !important;
+  color: $main-color-secondary !important;
+}
+
+.btn-main-full{
+  background-color: $main-color-secondary !important;
+  border: 2px solid $main-color-secondary !important;
+  font-weight: 600 !important;
+  color: $background-color !important;
+}
+
+.btn-main-full:hover{
+  background-color: $background-color !important;
+  color: $main-color-secondary !important;
+}
+
+.btn-green-full{
+  background-color: $green-secondary !important;
+  border: 2px solid $green-secondary !important;
+  font-weight: 700 !important;
+  color: $background-color !important;
+}
+
+.btn-green-full:hover{
+  background-color: $background-color !important;
+  color: $green-secondary !important;
+}
+
+
+.form-control:focus{
+  border-color: $main-color !important;
+  box-shadow: 0 0 0 0.25rem #806fc482 !important;
+}
+
+.btn-peach-full{
+  background-color: $peach-secondary !important;
+  border: 2px solid $peach-secondary !important;
+  color: $background-color !important;
+  font-weight: 700 !important;
+}
+
+.btn-peach-full:hover{
+  background-color: $background-color !important;
+  color: $peach-secondary !important;
+}
+
+.main-input{
+  border: 1px solid $main-color-secondary;
+  border-radius: 5px;
+}
+
+.single-input{
+  width: 50%;
+  display: block;
+  margin: 0 auto;
+}

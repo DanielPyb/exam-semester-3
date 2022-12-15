@@ -1,0 +1,30 @@
+#credit-btn {
+  color: $grey-v1;
+  font-weight: 600;
+  font-size: 2rem;
+}
+
+
+.navbar-nav .nav-link {
+  margin-left: 20px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 2px solid $main-color-secondary;
+  background-color: $main-color-secondary;
+  font-weight: 600;
+  color: $background-color;
+}
+
+.navbar-nav .active {
+  background-color: $background-color;
+  color: $main-color-secondary !important;
+}
+
+.nav-link:hover{
+  background-color: $background-color;
+  color: $main-color-secondary !important;
+}
+
+.navbar{
+  background-color: $main-color;
+}

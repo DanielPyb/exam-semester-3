@@ -1,0 +1,18 @@
+// custom css classes and mixins
+@mixin text-overflow($lines) {
+  @content;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $lines;
+  word-break: break-word;
+}
+
+.short-text-title {
+  @include text-overflow(1);
+}
+
+.short-text-para {
+  @include text-overflow(3);
+}

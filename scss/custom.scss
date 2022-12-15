@@ -1,0 +1,26 @@
+//bootstrap css
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+// boostrap overide variables
+@import "variables.scss";
+
+//navbar styles
+@import "navBar.scss";
+
+// mediaqueries
+@import "mediaqueries.scss";
+
+//mixins
+@import "mixins.scss";
+
+//important rules
+@import "important.scss";
+
+//login page
+@import "login.scss";
+
+//cards
+@import "cards.scss";
+
+//edit bootstrap
+@import "editBS.scss";

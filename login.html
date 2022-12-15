@@ -6,113 +6,168 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/custom.css">
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js" defer></script>
+    <script src="scripts/listeners/auth/login.mjs" type="module" defer></script>
+    <script src="scripts/listeners/auth/logout.mjs" type="module" defer></script>
+    <script src="scripts/listeners/auth/register.mjs" type="module" defer></script>
+    <script src="scripts/listeners/display/toggleLoginRegister.mjs" type="module" defer></script>
+    <script src="/scripts/static/static.mjs" type="module" defer></script>
+    
 </head>
 <body>
-    <nav class="navbar navbar-expand-md">
-        <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <a class="nav-link" aria-current="page" href="index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link active" href="login.html">Log in</a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Edit Avatar
-                  </a>
-                  <ul class="dropdown-menu" style="min-width: 375px;">
-                    <li><a class="dropdown-item" href="#"><img src="img/Gavel_0001.png" style="width:100%"></a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li>
-                        <div class="mb-3">
-                            <label for="listing-photo" class="form-label">Photo URL</label>
-                            <input type="url" class="form-control" id="listing-photo">
-                            <div id="url-update-error" class="form-text" style="display: none;">This needs to be a valid URL to a photo</div>
-                          </div>
-                    </li>
-                    <li>
-                        <div class="container text-center">
-                            <div class="row">
-                            <div class="col">
-                                <button class="btn btn-success">Confirm</button>
-                            </div>
-                            <div class="col">
-                                <button class="btn btn-outline-danger">Cancel</button>
-                            </div>
-                        </div>
-                        </div>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-              <form class="d-flex">
-                <button class="btn btn-danger" type="submit" id="log-out-btn">Log out</button>
-                <button class="btn btn-primary" type="submit" id="log-in-btn" style="display: none;">Log in</button>
-              </form>
-            </div>
-          </div>
-    </nav>
-
-
-    <div class="container">
-    <div>
-        <img src="img/Gavel_0001.png" width="100%">
+  <nav class="navbar navbar-expand-md p-3">
+    <div class="container-fluid">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <h4 id="credit-btn">credit</h4>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html"
+              >Home</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="login.html">Log in</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Edit Avatar
+            </a>
+            <ul class="dropdown-menu" style="min-width: 375px">
+              <li id="avatar-photo-container" class="dropdown-item">
+                <img src="img/gavel_purple.png" style="width: 100%" />
+              </li>
+              <li><hr class="dropdown-divider" /></li>
+              <li>
+                <div class="mb-3">
+                  <label for="avatar-photo" class="form-label"
+                    >Photo URL</label
+                  >
+                  <input type="url" class="form-control" id="avatar-photo" />
+                  <div
+                    id="avatar-photo-error"
+                    class="form-text"
+                    style="display: none"
+                  >
+                    This needs to be a valid URL to a photo
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="container text-center">
+                  <div class="row">
+                    <div class="col">
+                      <button class="btn btn-green-full" id="confirm-avatar">
+                        Confirm
+                      </button>
+                    </div>
+                    <div class="col">
+                      <button class="btn btn-peach-full">Cancel</button>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <button class="btn btn-peach-full" type="submit" id="log-out-btn">
+            Log out
+          </button>
+          <button
+          type="button"
+            class="btn btn-green-full"
+            id="log-in-btn"
+            style="display: none"
+            onClick="window.location.href='login.html'"
+          >
+            Log in
+          </button>
+        </form>
+      </div>
     </div>
+  </nav>
+
+
+    <div class="container row login-register">
+      <div class="col small-invis">
     <div>
-    <div id="login-div">
+        <img src="img/gavel_purple.png" width="100%" alt="Gavel and block">
+    </div>
+    </div>
+    <div class="col">
+    <div>
+    <div id="login-div" style="display: none;">
         <form>
             <h2>Log in</h2>
             <div class="mb-3">
-              <label for="register-email" class="form-label">Email</label>
-              <input type="email" class="form-control" id="register-email" aria-describedby="emailHelp">
-              <div id="email-login-error" class="form-text">Your email needs to be a @stud.noroff.no email</div>
+              <label for="login-email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="login-email" aria-describedby="emailHelp">
+              <div id="email-login-error" class="form-text text-danger" style="display: none">We could not find these credentials in our database</div>
             </div>
             <div class="mb-3">
               <label for="login-password" class="form-label">Password</label>
               <input type="password" class="form-control" id="login-password">
-              <div id="password-login-error" class="form-text ">Your password does not match our database</div>
+              <div id="password-login-error" class="form-text text-danger" style="display: none">We could not find these credentials in our database</div>
             </div>
-            <button type="submit" class="btn btn-primary">Log in</button>
+            <button type="submit" class="btn btn-main-full my-4" id="login-btn">Log in</button>
           </form>
              <p>Don't have an account? </br>
-                <span><a href="#">Register here!</a></span></p>
+                <span class="toggle-register">Register here!</span></p>
         </div>
           
-    <div id="register-div">
+    <div id="register-div" style="display: block;">
         <form>
             <h2>Register</h2>
             <div class="mb-3">
               <label for="register-email" class="form-label">Email</label>
               <input type="email" class="form-control" id="register-email" aria-describedby="emailHelp">
-              <div id="email-register-error" class="form-text">Your email needs to be a @stud.noroff.no email</div>
+              <div id="email-register-error" class="form-text text-danger" style="display: none">Your email needs to be a @stud.noroff.no email</div>
+            </div>
+            <div class="mb-3">
+              <label for="register-username" class="form-label">Username</label>
+              <input type="text" class="form-control" id="register-username" aria-describedby="emailHelp">
+              <div id="username-register-error" class="form-text text-danger" style="display: none">Username needs to be better</div>
             </div>
             <div class="mb-3">
                 <label for="register-avatar" class="form-label">Avatar URL</label>
                 <input type="text" class="form-control" id="register-avatar" aria-describedby="emailHelp">
-                <div id="avatar-register-error" class="form-text">Avatar URL needs to be a url toa photo</div>
+                <div id="avatar-register-error" class="form-text text-danger" style="display: none">Avatar URL needs to be a url toa photo</div>
               </div>
             <div class="mb-3">
               <label for="register-password-1" class="form-label">Password</label>
               <input type="password" class="form-control" id="register-password-1">
-              <div id="password-error" class="form-text">Your passwords does not match</div>
+              <div id="password-error" class="form-text text-danger" style="display: none">Your passwords does not match</div>
             </div>
             <div class="mb-3">
                 <label for="register-password-2" class="form-label">Password</label>
                 <input type="password" class="form-control" id="register-password-2">
-                <div id="password-error" class="form-text">Your passwords does not match</div>
+                <div id="password-error-2" class="form-text text-danger" style="display: none">Your passwords does not match</div>
               </div>
-            <button type="submit" class="btn btn-primary">Register</button>
+            <button type="submit" class="btn btn-main-full my-4" id="register-btn">Register</button>
           </form>
         <p>Allready have an account? </br>
-        <span><a href="#">Log in here!</a></span></p>
+        <span class="toggle-register">Log in here!</span></p>
     </div>
     </div>
+  </div>
     </div>
     <footer>
 
